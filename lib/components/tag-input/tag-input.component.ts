@@ -116,6 +116,7 @@ export class TagInputComponent implements ControlValueAccessor, OnDestroy, OnIni
   @Input() autocompleteSelectFirstItem: boolean = true;
   @Input() pasteSplitPattern: string = ',';
   @Input() placeholder: string = 'Add a tag';
+  @Output('currentTag') currentTag: EventEmitter<string> = new EventEmitter<string>();
   @Output('addTag') addTag: EventEmitter<string> = new EventEmitter<string>();
   @Output('removeTag') removeTag: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('tagInputElement') tagInputElement: ElementRef;
@@ -198,6 +199,7 @@ export class TagInputComponent implements ControlValueAccessor, OnDestroy, OnIni
         break;
 
       default:
+        this.currentTag.emit(this.inputValue);
         break;
     }
   }
