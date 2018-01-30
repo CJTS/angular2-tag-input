@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.KEYS = {
     backspace: 8,
     comma: 188,

@@ -1,8 +1,18 @@
 "use strict";
-var core_1 = require('@angular/core');
-var Observable_1 = require('rxjs/Observable');
-var tag_input_keys_1 = require('../../shared/tag-input-keys');
-var TagInputAutocompleteComponent = (function () {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var Observable_1 = require("rxjs/Observable");
+var tag_input_keys_1 = require("../../shared/tag-input-keys");
+var TagInputAutocompleteComponent = /** @class */ (function () {
     function TagInputAutocompleteComponent(elementRef) {
         this.elementRef = elementRef;
         this.selectFirstItem = false;
@@ -126,23 +136,30 @@ var TagInputAutocompleteComponent = (function () {
     TagInputAutocompleteComponent.prototype.ngOnDestroy = function () {
         this.keySubscription.unsubscribe();
     };
-    TagInputAutocompleteComponent.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: 'rl-tag-input-autocomplete',
-                    template: "\n    <div\n      *ngFor=\"let item of items; let itemIndex = index\"\n      [ngClass]=\"{ 'is-selected': selectedItemIndex === itemIndex }\"\n      (click)=\"selectItem(itemIndex)\"\n      class=\"rl-autocomplete-item\">\n      {{item}}\n    </div>\n  ",
-                    styles: ["\n    :host {\n      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);\n      display: block;\n      position: absolute;\n      top: 100%;\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      color: #444444;\n      background: white;\n      padding: 8px 0;\n    }\n\n     :host .rl-autocomplete-item {\n      padding: 0 16px;\n      height: 48px;\n      line-height: 48px;\n    }\n\n     :host .is-selected {\n      background: #eeeeee;\n    }\n  "]
-                },] },
-    ];
-    /** @nocollapse */
-    TagInputAutocompleteComponent.ctorParameters = function () { return [
-        { type: core_1.ElementRef, },
-    ]; };
-    TagInputAutocompleteComponent.propDecorators = {
-        'items': [{ type: core_1.Input },],
-        'selectFirstItem': [{ type: core_1.Input },],
-        'itemSelected': [{ type: core_1.Output },],
-        'enterPressed': [{ type: core_1.Output },],
-    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], TagInputAutocompleteComponent.prototype, "items", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputAutocompleteComponent.prototype, "selectFirstItem", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], TagInputAutocompleteComponent.prototype, "itemSelected", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], TagInputAutocompleteComponent.prototype, "enterPressed", void 0);
+    TagInputAutocompleteComponent = __decorate([
+        core_1.Component({
+            selector: 'rl-tag-input-autocomplete',
+            template: "\n    <div\n      *ngFor=\"let item of items; let itemIndex = index\"\n      [ngClass]=\"{ 'is-selected': selectedItemIndex === itemIndex }\"\n      (click)=\"selectItem(itemIndex)\"\n      class=\"rl-autocomplete-item\">\n      {{item}}\n    </div>\n  ",
+            styles: ["\n    :host {\n      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);\n      display: block;\n      position: absolute;\n      top: 100%;\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      color: #444444;\n      background: white;\n      padding: 8px 0;\n    }\n\n     :host .rl-autocomplete-item {\n      padding: 0 16px;\n      height: 48px;\n      line-height: 48px;\n    }\n\n     :host .is-selected {\n      background: #eeeeee;\n    }\n  "]
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef])
+    ], TagInputAutocompleteComponent);
     return TagInputAutocompleteComponent;
 }());
 exports.TagInputAutocompleteComponent = TagInputAutocompleteComponent;

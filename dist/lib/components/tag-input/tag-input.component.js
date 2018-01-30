@@ -1,14 +1,24 @@
 "use strict";
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var tag_input_keys_1 = require('../../shared/tag-input-keys');
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var tag_input_keys_1 = require("../../shared/tag-input-keys");
 /**
  * Taken from @angular/common/src/facade/lang
  */
 function isBlank(obj) {
     return obj === undefined || obj === null;
 }
-var TagInputComponent = (function () {
+var TagInputComponent = /** @class */ (function () {
     function TagInputComponent(fb, elementRef) {
         this.fb = fb;
         this.elementRef = elementRef;
@@ -35,6 +45,7 @@ var TagInputComponent = (function () {
         this.onChange = function () { };
         this.onTouched = function () { };
     }
+    TagInputComponent_1 = TagInputComponent;
     Object.defineProperty(TagInputComponent.prototype, "tagInputField", {
         get: function () {
             return this.tagInputForm.get('tagInputField');
@@ -208,43 +219,98 @@ var TagInputComponent = (function () {
     TagInputComponent.prototype.ngOnDestroy = function () {
         this.tagInputSubscription.unsubscribe();
     };
-    TagInputComponent.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: 'rl-tag-input',
-                    template: "\n    <rl-tag-input-item\n      [text]=\"tag\"\n      [index]=\"index\"\n      [selected]=\"selectedTag === index\"\n      (tagRemoved)=\"_removeTag($event)\"\n      *ngFor=\"let tag of tagsList; let index = index\">\n    </rl-tag-input-item>\n    <form [formGroup]=\"tagInputForm\" class=\"ng2-tag-input-form\">\n      <input\n        class=\"ng2-tag-input-field\"\n        type=\"text\"\n        #tagInputElement\n        formControlName=\"tagInputField\"\n        [placeholder]=\"placeholder\"\n        (paste)=\"onInputPaste($event)\"\n        (keydown)=\"onKeydown($event)\"\n        (blur)=\"onInputBlurred($event)\"\n        (focus)=\"onInputFocused()\">\n\n      <div *ngIf=\"showAutocomplete()\" class=\"rl-tag-input-autocomplete-container\">\n        <rl-tag-input-autocomplete\n          [items]=\"autocompleteResults\"\n          [selectFirstItem]=\"autocompleteSelectFirstItem\"\n          (itemSelected)=\"onAutocompleteSelect($event)\"\n          (enterPressed)=\"onAutocompleteEnter($event)\">\n        </rl-tag-input-autocomplete>\n      </div>\n    </form>\n  ",
-                    styles: ["\n    :host {\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      display: block;\n      box-shadow: 0 1px #ccc;\n      padding: 8px 0 6px 0;\n      will-change: box-shadow;\n      transition: box-shadow 0.12s ease-out;\n    }\n\n     :host .ng2-tag-input-form {\n      display: inline;\n    }\n\n     :host .ng2-tag-input-field {\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      display: inline-block;\n      width: auto;\n      box-shadow: none;\n      border: 0;\n      padding: 8px 0;\n    }\n\n     :host .ng2-tag-input-field:focus {\n      outline: 0;\n    }\n\n     :host .rl-tag-input-autocomplete-container {\n      position: relative;\n      z-index: 10;\n    }\n\n    :host.ng2-tag-input-focus {\n      box-shadow: 0 2px #0d8bff;\n    }\n  "],
-                    providers: [
-                        { provide: forms_1.NG_VALUE_ACCESSOR, useExisting: core_1.forwardRef(function () { return TagInputComponent; }), multi: true },
-                    ]
-                },] },
-    ];
-    /** @nocollapse */
-    TagInputComponent.ctorParameters = function () { return [
-        { type: forms_1.FormBuilder, },
-        { type: core_1.ElementRef, },
-    ]; };
-    TagInputComponent.propDecorators = {
-        'isFocused': [{ type: core_1.HostBinding, args: ['class.ng2-tag-input-focus',] },],
-        'addOnBlur': [{ type: core_1.Input },],
-        'addOnComma': [{ type: core_1.Input },],
-        'addOnEnter': [{ type: core_1.Input },],
-        'addOnPaste': [{ type: core_1.Input },],
-        'addOnSpace': [{ type: core_1.Input },],
-        'allowDuplicates': [{ type: core_1.Input },],
-        'allowedTagsPattern': [{ type: core_1.Input },],
-        'autocomplete': [{ type: core_1.Input },],
-        'autocompleteItems': [{ type: core_1.Input },],
-        'autocompleteMustMatch': [{ type: core_1.Input },],
-        'autocompleteSelectFirstItem': [{ type: core_1.Input },],
-        'pasteSplitPattern': [{ type: core_1.Input },],
-        'placeholder': [{ type: core_1.Input },],
-        'currentTag': [{ type: core_1.Output, args: ['currentTag',] },],
-        'addTag': [{ type: core_1.Output, args: ['addTag',] },],
-        'removeTag': [{ type: core_1.Output, args: ['removeTag',] },],
-        'tagInputElement': [{ type: core_1.ViewChild, args: ['tagInputElement',] },],
-        'onDocumentClick': [{ type: core_1.HostListener, args: ['document:click', ['$event', '$event.target'],] },],
-    };
+    __decorate([
+        core_1.HostBinding('class.ng2-tag-input-focus'),
+        __metadata("design:type", Object)
+    ], TagInputComponent.prototype, "isFocused", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "addOnBlur", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "addOnComma", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "addOnEnter", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "addOnPaste", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "addOnSpace", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "allowDuplicates", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", RegExp)
+    ], TagInputComponent.prototype, "allowedTagsPattern", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "autocomplete", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], TagInputComponent.prototype, "autocompleteItems", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "autocompleteMustMatch", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], TagInputComponent.prototype, "autocompleteSelectFirstItem", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], TagInputComponent.prototype, "pasteSplitPattern", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], TagInputComponent.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Output('currentTag'),
+        __metadata("design:type", core_1.EventEmitter)
+    ], TagInputComponent.prototype, "currentTag", void 0);
+    __decorate([
+        core_1.Output('addTag'),
+        __metadata("design:type", core_1.EventEmitter)
+    ], TagInputComponent.prototype, "addTag", void 0);
+    __decorate([
+        core_1.Output('removeTag'),
+        __metadata("design:type", core_1.EventEmitter)
+    ], TagInputComponent.prototype, "removeTag", void 0);
+    __decorate([
+        core_1.ViewChild('tagInputElement'),
+        __metadata("design:type", core_1.ElementRef)
+    ], TagInputComponent.prototype, "tagInputElement", void 0);
+    __decorate([
+        core_1.HostListener('document:click', ['$event', '$event.target']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [MouseEvent, HTMLElement]),
+        __metadata("design:returntype", void 0)
+    ], TagInputComponent.prototype, "onDocumentClick", null);
+    TagInputComponent = TagInputComponent_1 = __decorate([
+        core_1.Component({
+            selector: 'rl-tag-input',
+            template: "\n    <rl-tag-input-item\n      [text]=\"tag\"\n      [index]=\"index\"\n      [selected]=\"selectedTag === index\"\n      (tagRemoved)=\"_removeTag($event)\"\n      *ngFor=\"let tag of tagsList; let index = index\">\n    </rl-tag-input-item>\n    <form [formGroup]=\"tagInputForm\" class=\"ng2-tag-input-form\">\n      <input\n        class=\"ng2-tag-input-field\"\n        type=\"text\"\n        #tagInputElement\n        formControlName=\"tagInputField\"\n        [placeholder]=\"placeholder\"\n        (paste)=\"onInputPaste($event)\"\n        (keydown)=\"onKeydown($event)\"\n        (blur)=\"onInputBlurred($event)\"\n        (focus)=\"onInputFocused()\">\n\n      <div *ngIf=\"showAutocomplete()\" class=\"rl-tag-input-autocomplete-container\">\n        <rl-tag-input-autocomplete\n          [items]=\"autocompleteResults\"\n          [selectFirstItem]=\"autocompleteSelectFirstItem\"\n          (itemSelected)=\"onAutocompleteSelect($event)\"\n          (enterPressed)=\"onAutocompleteEnter($event)\">\n        </rl-tag-input-autocomplete>\n      </div>\n    </form>\n  ",
+            styles: ["\n    :host {\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      display: block;\n      box-shadow: 0 1px #ccc;\n      padding: 8px 0 6px 0;\n      will-change: box-shadow;\n      transition: box-shadow 0.12s ease-out;\n    }\n\n     :host .ng2-tag-input-form {\n      display: inline;\n    }\n\n     :host .ng2-tag-input-field {\n      font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n      font-size: 16px;\n      display: inline-block;\n      width: auto;\n      box-shadow: none;\n      border: 0;\n      padding: 8px 0;\n    }\n\n     :host .ng2-tag-input-field:focus {\n      outline: 0;\n    }\n\n     :host .rl-tag-input-autocomplete-container {\n      position: relative;\n      z-index: 10;\n    }\n\n    :host.ng2-tag-input-focus {\n      box-shadow: 0 2px #0d8bff;\n    }\n  "],
+            providers: [
+                { provide: forms_1.NG_VALUE_ACCESSOR, useExisting: core_1.forwardRef(function () { return TagInputComponent_1; }), multi: true },
+            ]
+        }),
+        __metadata("design:paramtypes", [forms_1.FormBuilder,
+            core_1.ElementRef])
+    ], TagInputComponent);
     return TagInputComponent;
+    var TagInputComponent_1;
 }());
 exports.TagInputComponent = TagInputComponent;
 //# sourceMappingURL=tag-input.component.js.map
