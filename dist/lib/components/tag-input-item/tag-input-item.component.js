@@ -20,7 +20,7 @@ var TagInputItemComponent = (function () {
                 },] },
     ];
     /** @nocollapse */
-    TagInputItemComponent.ctorParameters = [];
+    TagInputItemComponent.ctorParameters = function () { return []; };
     TagInputItemComponent.propDecorators = {
         'selected': [{ type: core_1.Input },],
         'text': [{ type: core_1.Input },],

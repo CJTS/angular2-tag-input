@@ -219,10 +219,10 @@ var TagInputComponent = (function () {
                 },] },
     ];
     /** @nocollapse */
-    TagInputComponent.ctorParameters = [
+    TagInputComponent.ctorParameters = function () { return [
         { type: forms_1.FormBuilder, },
         { type: core_1.ElementRef, },
-    ];
+    ]; };
     TagInputComponent.propDecorators = {
         'isFocused': [{ type: core_1.HostBinding, args: ['class.ng2-tag-input-focus',] },],
         'addOnBlur': [{ type: core_1.Input },],

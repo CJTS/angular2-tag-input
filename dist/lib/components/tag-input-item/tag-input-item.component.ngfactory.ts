@@ -6,13 +6,14 @@
  /* tslint:disable */
 
 import * as import0 from '../../../../lib/components/tag-input-item/tag-input-item.component';
-import * as import1 from '@angular/core/src/change_detection/change_detection';
+import * as import1 from '@angular/core/src/change_detection/change_detection_util';
 import * as import2 from '@angular/core/src/linker/view';
 import * as import3 from '@angular/core/src/linker/view_utils';
 import * as import4 from '@angular/core/src/render/api';
 import * as import5 from '@angular/core/src/metadata/view';
 import * as import6 from '@angular/core/src/linker/view_type';
-import * as import7 from '@angular/core/src/linker/component_factory';
+import * as import7 from '@angular/core/src/change_detection/constants';
+import * as import8 from '@angular/core/src/linker/component_factory';
 export class Wrapper_TagInputItemComponent {
   /*private*/ _eventHandler:Function;
   context:import0.TagInputItemComponent;
@@ -83,15 +84,15 @@ class View_TagInputItemComponent_Host0 extends import2.AppView<any> {
   compView_0:import2.AppView<import0.TagInputItemComponent>;
   _TagInputItemComponent_0_3:Wrapper_TagInputItemComponent;
   constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_TagInputItemComponent_Host0,renderType_TagInputItemComponent_Host,import6.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import1.ChangeDetectorStatus.CheckAlways);
+    super(View_TagInputItemComponent_Host0,renderType_TagInputItemComponent_Host,import6.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways);
   }
-  createInternal(rootSelector:string):import7.ComponentRef<any> {
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
     this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'rl-tag-input-item',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this.compView_0 = new View_TagInputItemComponent0(this.viewUtils,this,0,this._el_0);
     this._TagInputItemComponent_0_3 = new Wrapper_TagInputItemComponent();
     this.compView_0.create(this._TagInputItemComponent_0_3.context);
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
-    return new import7.ComponentRef_<any>(0,this,this._el_0,this._TagInputItemComponent_0_3.context);
+    return new import8.ComponentRef_<any>(0,this,this._el_0,this._TagInputItemComponent_0_3.context);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import0.TagInputItemComponent) && (0 === requestNodeIndex))) { return this._TagInputItemComponent_0_3.context; }
@@ -100,7 +101,7 @@ class View_TagInputItemComponent_Host0 extends import2.AppView<any> {
   detectChangesInternal(throwOnChange:boolean):void {
     this._TagInputItemComponent_0_3.ngDoCheck(this,this._el_0,throwOnChange);
     this._TagInputItemComponent_0_3.checkHost(this,this.compView_0,this._el_0,throwOnChange);
-    this.compView_0.detectChanges(throwOnChange);
+    this.compView_0.internalDetectChanges(throwOnChange);
   }
   destroyInternal():void {
     this.compView_0.destroy();
@@ -110,7 +111,7 @@ class View_TagInputItemComponent_Host0 extends import2.AppView<any> {
     cb(this._el_0,ctx);
   }
 }
-export const TagInputItemComponentNgFactory:import7.ComponentFactory<import0.TagInputItemComponent> = new import7.ComponentFactory<import0.TagInputItemComponent>('rl-tag-input-item',View_TagInputItemComponent_Host0,import0.TagInputItemComponent);
+export const TagInputItemComponentNgFactory:import8.ComponentFactory<import0.TagInputItemComponent> = new import8.ComponentFactory<import0.TagInputItemComponent>('rl-tag-input-item',View_TagInputItemComponent_Host0,import0.TagInputItemComponent);
 const styles_TagInputItemComponent:any[] = ['[_nghost-%COMP%] {\n      font-family: "Roboto", "Helvetica Neue", sans-serif;\n      font-size: 16px;\n      height: 32px;\n      line-height: 32px;\n      display: inline-block;\n      background: #e0e0e0;\n      padding: 0 12px;\n      border-radius: 90px;\n      margin-right: 10px;\n      transition: all 0.12s ease-out;\n    }\n\n     [_nghost-%COMP%]   .ng2-tag-input-remove[_ngcontent-%COMP%] {\n      background: #a6a6a6;\n      border-radius: 50%;\n      color: #e0e0e0;\n      cursor: pointer;\n      display: inline-block;\n      font-size: 17px;\n      height: 24px;\n      line-height: 24px;\n      margin-left: 6px;\n      margin-right: -6px;\n      text-align: center;\n      width: 24px;\n    }\n\n    .ng2-tag-input-item-selected[_nghost-%COMP%] {\n      color: white;\n      background: #0d8bff;\n    }\n\n     .ng2-tag-input-item-selected[_nghost-%COMP%]   .ng2-tag-input-remove[_ngcontent-%COMP%] {\n      background: white;\n      color: #0d8bff;\n    }'];
 var renderType_TagInputItemComponent:import4.RenderComponentType = import3.createRenderComponentType('',0,import5.ViewEncapsulation.Emulated,styles_TagInputItemComponent,{});
 export class View_TagInputItemComponent0 extends import2.AppView<import0.TagInputItemComponent> {
@@ -120,10 +121,10 @@ export class View_TagInputItemComponent0 extends import2.AppView<import0.TagInpu
   _text_3:any;
   /*private*/ _expr_4:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_TagInputItemComponent0,renderType_TagInputItemComponent,import6.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import1.ChangeDetectorStatus.CheckAlways);
+    super(View_TagInputItemComponent0,renderType_TagInputItemComponent,import6.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways);
     this._expr_4 = import1.UNINITIALIZED;
   }
-  createInternal(rootSelector:string):import7.ComponentRef<any> {
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
     const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
     this._text_0 = this.renderer.createText(parentRenderNode,'',(null as any));
     this._el_1 = import3.createRenderElement(this.renderer,parentRenderNode,'span',new import3.InlineArray2(2,'class','ng2-tag-input-remove'),(null as any));

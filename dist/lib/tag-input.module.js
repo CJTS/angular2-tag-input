@@ -29,7 +29,7 @@ var RlTagInputModule = (function () {
                 },] },
     ];
     /** @nocollapse */
-    RlTagInputModule.ctorParameters = [];
+    RlTagInputModule.ctorParameters = function () { return []; };
     return RlTagInputModule;
 }());
 exports.RlTagInputModule = RlTagInputModule;

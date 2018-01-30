@@ -6,22 +6,23 @@
  /* tslint:disable */
 
 import * as import0 from '../../../../lib/components/tag-input-autocomplete/tag-input-autocomplete.component';
-import * as import1 from '@angular/core/src/change_detection/change_detection';
+import * as import1 from '@angular/core/src/change_detection/change_detection_util';
 import * as import2 from '@angular/core/src/linker/view';
 import * as import3 from '@angular/core/src/linker/view_utils';
 import * as import4 from '@angular/core/src/render/api';
 import * as import5 from '@angular/core/src/metadata/view';
 import * as import6 from '@angular/core/src/linker/view_type';
-import * as import7 from '@angular/core/src/linker/component_factory';
-import * as import8 from '@angular/core/src/linker/element_ref';
-import * as import9 from '@angular/core/src/linker/view_container';
-import * as import10 from '../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
-import * as import11 from '@angular/core/src/linker/template_ref';
+import * as import7 from '@angular/core/src/change_detection/constants';
+import * as import8 from '@angular/core/src/linker/component_factory';
+import * as import9 from '@angular/core/src/linker/element_ref';
+import * as import10 from '../../../node_modules/@angular/common/src/directives/ng_class.ngfactory';
+import * as import11 from '@angular/core/src/linker/view_container';
 import * as import12 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import13 from '@angular/common/src/directives/ng_for';
-import * as import14 from '../../../node_modules/@angular/common/src/directives/ng_class.ngfactory';
-import * as import15 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import16 from '@angular/common/src/directives/ng_class';
+import * as import13 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import14 from '@angular/common/src/directives/ng_class';
+import * as import15 from '../../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
+import * as import16 from '@angular/core/src/linker/template_ref';
+import * as import17 from '@angular/common/src/directives/ng_for';
 export class Wrapper_TagInputAutocompleteComponent {
   /*private*/ _eventHandler:Function;
   context:import0.TagInputAutocompleteComponent;
@@ -91,15 +92,15 @@ class View_TagInputAutocompleteComponent_Host0 extends import2.AppView<any> {
   compView_0:import2.AppView<import0.TagInputAutocompleteComponent>;
   _TagInputAutocompleteComponent_0_3:Wrapper_TagInputAutocompleteComponent;
   constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_TagInputAutocompleteComponent_Host0,renderType_TagInputAutocompleteComponent_Host,import6.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import1.ChangeDetectorStatus.CheckAlways);
+    super(View_TagInputAutocompleteComponent_Host0,renderType_TagInputAutocompleteComponent_Host,import6.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways);
   }
-  createInternal(rootSelector:string):import7.ComponentRef<any> {
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
     this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'rl-tag-input-autocomplete',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this.compView_0 = new View_TagInputAutocompleteComponent0(this.viewUtils,this,0,this._el_0);
-    this._TagInputAutocompleteComponent_0_3 = new Wrapper_TagInputAutocompleteComponent(new import8.ElementRef(this._el_0));
+    this._TagInputAutocompleteComponent_0_3 = new Wrapper_TagInputAutocompleteComponent(new import9.ElementRef(this._el_0));
     this.compView_0.create(this._TagInputAutocompleteComponent_0_3.context);
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
-    return new import7.ComponentRef_<any>(0,this,this._el_0,this._TagInputAutocompleteComponent_0_3.context);
+    return new import8.ComponentRef_<any>(0,this,this._el_0,this._TagInputAutocompleteComponent_0_3.context);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import0.TagInputAutocompleteComponent) && (0 === requestNodeIndex))) { return this._TagInputAutocompleteComponent_0_3.context; }
@@ -107,7 +108,7 @@ class View_TagInputAutocompleteComponent_Host0 extends import2.AppView<any> {
   }
   detectChangesInternal(throwOnChange:boolean):void {
     this._TagInputAutocompleteComponent_0_3.ngDoCheck(this,this._el_0,throwOnChange);
-    this.compView_0.detectChanges(throwOnChange);
+    this.compView_0.internalDetectChanges(throwOnChange);
   }
   destroyInternal():void {
     this.compView_0.destroy();
@@ -117,70 +118,24 @@ class View_TagInputAutocompleteComponent_Host0 extends import2.AppView<any> {
     cb(this._el_0,ctx);
   }
 }
-export const TagInputAutocompleteComponentNgFactory:import7.ComponentFactory<import0.TagInputAutocompleteComponent> = new import7.ComponentFactory<import0.TagInputAutocompleteComponent>('rl-tag-input-autocomplete',View_TagInputAutocompleteComponent_Host0,import0.TagInputAutocompleteComponent);
+export const TagInputAutocompleteComponentNgFactory:import8.ComponentFactory<import0.TagInputAutocompleteComponent> = new import8.ComponentFactory<import0.TagInputAutocompleteComponent>('rl-tag-input-autocomplete',View_TagInputAutocompleteComponent_Host0,import0.TagInputAutocompleteComponent);
 const styles_TagInputAutocompleteComponent:any[] = ['[_nghost-%COMP%] {\n      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);\n      display: block;\n      position: absolute;\n      top: 100%;\n      font-family: "Roboto", "Helvetica Neue", sans-serif;\n      font-size: 16px;\n      color: #444444;\n      background: white;\n      padding: 8px 0;\n    }\n\n     [_nghost-%COMP%]   .rl-autocomplete-item[_ngcontent-%COMP%] {\n      padding: 0 16px;\n      height: 48px;\n      line-height: 48px;\n    }\n\n     [_nghost-%COMP%]   .is-selected[_ngcontent-%COMP%] {\n      background: #eeeeee;\n    }'];
-var renderType_TagInputAutocompleteComponent:import4.RenderComponentType = import3.createRenderComponentType('',0,import5.ViewEncapsulation.Emulated,styles_TagInputAutocompleteComponent,{});
-export class View_TagInputAutocompleteComponent0 extends import2.AppView<import0.TagInputAutocompleteComponent> {
-  _text_0:any;
-  _anchor_1:any;
-  /*private*/ _vc_1:import9.ViewContainer;
-  _TemplateRef_1_5:any;
-  _NgFor_1_6:import10.Wrapper_NgFor;
-  _text_2:any;
-  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_TagInputAutocompleteComponent0,renderType_TagInputAutocompleteComponent,import6.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import1.ChangeDetectorStatus.CheckAlways);
-  }
-  createInternal(rootSelector:string):import7.ComponentRef<any> {
-    const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
-    this._text_0 = this.renderer.createText(parentRenderNode,'\n    ',(null as any));
-    this._anchor_1 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
-    this._vc_1 = new import9.ViewContainer(1,(null as any),this,this._anchor_1);
-    this._TemplateRef_1_5 = new import11.TemplateRef_(this,1,this._anchor_1);
-    this._NgFor_1_6 = new import10.Wrapper_NgFor(this._vc_1.vcRef,this._TemplateRef_1_5,this.parentView.injectorGet(import12.IterableDiffers,this.parentIndex),this.ref);
-    this._text_2 = this.renderer.createText(parentRenderNode,'\n  ',(null as any));
-    this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [
-      this._text_0,
-      this._anchor_1,
-      this._text_2
-    ]
-    ),(null as any));
-    return (null as any);
-  }
-  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.TemplateRef) && (1 === requestNodeIndex))) { return this._TemplateRef_1_5; }
-    if (((token === import13.NgFor) && (1 === requestNodeIndex))) { return this._NgFor_1_6.context; }
-    return notFoundResult;
-  }
-  detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1_0_0:any = this.context.items;
-    this._NgFor_1_6.check_ngForOf(currVal_1_0_0,throwOnChange,false);
-    this._NgFor_1_6.ngDoCheck(this,this._anchor_1,throwOnChange);
-    this._vc_1.detectChangesInNestedViews(throwOnChange);
-  }
-  destroyInternal():void {
-    this._vc_1.destroyNestedViews();
-  }
-  createEmbeddedViewInternal(nodeIndex:number):import2.AppView<any> {
-    if ((nodeIndex == 1)) { return new View_TagInputAutocompleteComponent1(this.viewUtils,this,1,this._anchor_1,this._vc_1); }
-    return (null as any);
-  }
-}
 class View_TagInputAutocompleteComponent1 extends import2.AppView<any> {
   _el_0:any;
-  _NgClass_0_3:import14.Wrapper_NgClass;
+  _NgClass_0_3:import10.Wrapper_NgClass;
   _text_1:any;
   _map_3:any;
   /*private*/ _expr_4:any;
-  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import9.ViewContainer) {
-    super(View_TagInputAutocompleteComponent1,renderType_TagInputAutocompleteComponent,import6.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import1.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
+  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import11.ViewContainer) {
+    super(View_TagInputAutocompleteComponent1,renderType_TagInputAutocompleteComponent,import6.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
     this._map_3 = import3.pureProxy1((p0:any):{[key: string]:any} => {
       return {'is-selected': p0};
     });
     this._expr_4 = import1.UNINITIALIZED;
   }
-  createInternal(rootSelector:string):import7.ComponentRef<any> {
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
     this._el_0 = import3.createRenderElement(this.renderer,(null as any),'div',new import3.InlineArray2(2,'class','rl-autocomplete-item'),(null as any));
-    this._NgClass_0_3 = new import14.Wrapper_NgClass(this.parentView.injectorGet(import12.IterableDiffers,this.parentIndex),this.parentView.injectorGet(import15.KeyValueDiffers,this.parentIndex),new import8.ElementRef(this._el_0),this.renderer);
+    this._NgClass_0_3 = new import10.Wrapper_NgClass(this.parentView.injectorGet(import12.IterableDiffers,this.parentIndex),this.parentView.injectorGet(import13.KeyValueDiffers,this.parentIndex),new import9.ElementRef(this._el_0),this.renderer);
     this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
     var disposable_0:Function = import3.subscribeToRenderElement(this,this._el_0,new import3.InlineArray2(2,'click',(null as any)),this.eventHandler(this.handleEvent_0));
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [
@@ -191,7 +146,7 @@ class View_TagInputAutocompleteComponent1 extends import2.AppView<any> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.NgClass) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._NgClass_0_3.context; }
+    if (((token === import14.NgClass) && ((0 <= requestNodeIndex) && (requestNodeIndex <= 1)))) { return this._NgClass_0_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -217,5 +172,51 @@ class View_TagInputAutocompleteComponent1 extends import2.AppView<any> {
       result = (pd_sub_0 && result);
     }
     return result;
+  }
+}
+var renderType_TagInputAutocompleteComponent:import4.RenderComponentType = import3.createRenderComponentType('',0,import5.ViewEncapsulation.Emulated,styles_TagInputAutocompleteComponent,{});
+export class View_TagInputAutocompleteComponent0 extends import2.AppView<import0.TagInputAutocompleteComponent> {
+  _text_0:any;
+  _anchor_1:any;
+  /*private*/ _vc_1:import11.ViewContainer;
+  _TemplateRef_1_5:any;
+  _NgFor_1_6:import15.Wrapper_NgFor;
+  _text_2:any;
+  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
+    super(View_TagInputAutocompleteComponent0,renderType_TagInputAutocompleteComponent,import6.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
+    const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
+    this._text_0 = this.renderer.createText(parentRenderNode,'\n    ',(null as any));
+    this._anchor_1 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
+    this._vc_1 = new import11.ViewContainer(1,(null as any),this,this._anchor_1);
+    this._TemplateRef_1_5 = new import16.TemplateRef_(this,1,this._anchor_1);
+    this._NgFor_1_6 = new import15.Wrapper_NgFor(this._vc_1.vcRef,this._TemplateRef_1_5,this.parentView.injectorGet(import12.IterableDiffers,this.parentIndex),this.ref);
+    this._text_2 = this.renderer.createText(parentRenderNode,'\n  ',(null as any));
+    this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [
+      this._text_0,
+      this._anchor_1,
+      this._text_2
+    ]
+    ),(null as any));
+    return (null as any);
+  }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import16.TemplateRef) && (1 === requestNodeIndex))) { return this._TemplateRef_1_5; }
+    if (((token === import17.NgFor) && (1 === requestNodeIndex))) { return this._NgFor_1_6.context; }
+    return notFoundResult;
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_1_0_0:any = this.context.items;
+    this._NgFor_1_6.check_ngForOf(currVal_1_0_0,throwOnChange,false);
+    this._NgFor_1_6.ngDoCheck(this,this._anchor_1,throwOnChange);
+    this._vc_1.detectChangesInNestedViews(throwOnChange);
+  }
+  destroyInternal():void {
+    this._vc_1.destroyNestedViews();
+  }
+  createEmbeddedViewInternal(nodeIndex:number):import2.AppView<any> {
+    if ((nodeIndex == 1)) { return new View_TagInputAutocompleteComponent1(this.viewUtils,this,1,this._anchor_1,this._vc_1); }
+    return (null as any);
   }
 }

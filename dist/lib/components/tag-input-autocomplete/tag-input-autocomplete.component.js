@@ -134,9 +134,9 @@ var TagInputAutocompleteComponent = (function () {
                 },] },
     ];
     /** @nocollapse */
-    TagInputAutocompleteComponent.ctorParameters = [
+    TagInputAutocompleteComponent.ctorParameters = function () { return [
         { type: core_1.ElementRef, },
-    ];
+    ]; };
     TagInputAutocompleteComponent.propDecorators = {
         'items': [{ type: core_1.Input },],
         'selectFirstItem': [{ type: core_1.Input },],
